@@ -61,7 +61,7 @@ procedure transcription_log(.method$, .task$, .experimental_ID$, .initials$, .di
 	# Numeric and string constants for the NWR transcription log
 
 	.transcriber     = 1
-	.transcriber$    = "NonwordTranscriber"
+	.transcriber$    = "Transcriber"
 	.start           = 2
 	.start$          = "StartTime"
 	.end             = 3
@@ -90,9 +90,11 @@ procedure transcription_log(.method$, .task$, .experimental_ID$, .initials$, .di
 		.trials_transcribed$ = "NumberOfTrialsTranscribed"
 		.score = 6
 		.score$ = "Score"
+		.transcribeable = 7
+		.transcribeable$ = "TranscribeableTokens"
 
 		# Concatenate column names argument for the Create Table command
-		.column_names$ = "'.transcriber$' '.start$' '.end$' '.trials$' '.trials_transcribed$' '.score$'"
+		.column_names$ = "'.transcriber$' '.start$' '.end$' '.trials$' '.trials_transcribed$' '.score$' '.transcribeable$'"
 	endif
 
 	# Filename constants
@@ -137,6 +139,7 @@ procedure transcription_log(.method$, .task$, .experimental_ID$, .initials$, .di
 				Set numeric value: 1, .trials_transcribed$, 0
 				Set numeric value: 1, .trials$, .n_1
 				Set numeric value: 1, .score$, 0
+				Set numeric value: 1, .transcribeable$, 77
 			endif
 		endif
 		.praat_obj$ = selected$()
