@@ -59,31 +59,35 @@ procedure transcription_log(.method$, .task$, .experimental_ID$, .initials$, .di
 	# Numeric and string constants for the NonwordTranscription Log.
 
 	# Numeric and string constants for the NWR transcription log
-
-	.transcriber     = 1
-	.transcriber$    = "Transcriber"
-	.start           = 2
-	.start$          = "StartTime"
-	.end             = 3
-	.end$            = "EndTime"
-
 	if .task$ = "NonWordRep"
-		.cvs             = 4
-		.cvs$            = "NumberOfCVs"
-		.cvs_transcribed  = 5
+		.transcriber = 1
+		.transcriber$ = "NonwordTranscriber"
+		.start = 2
+		.start$ = "StartTime"
+		.end = 3
+		.end$ = "EndTime"
+		.cvs = 4
+		.cvs$ = "NumberOfCVs"
+		.cvs_transcribed = 5
 		.cvs_transcribed$ = "NumberOfCVsTranscribed"
-		.vcs             = 6
-		.vcs$            = "NumberOfVCs"
-		.vcs_transcribed  = 7
+		.vcs = 6
+		.vcs$ = "NumberOfVCs"
+		.vcs_transcribed = 7
 		.vcs_transcribed$ = "NumberOfVCsTranscribed"
-		.ccs             = 8
-		.ccs$            = "NumberOfCCs"
-		.ccs_transcribed  = 9
+		.ccs = 8
+		.ccs$ = "NumberOfCCs"
+		.ccs_transcribed = 9
 		.ccs_transcribed$ = "NumberOfCCsTranscribed"
 
 		# Concatenate column names argument for the Create Table command
 		.column_names$ = "'.transcriber$' '.start$' '.end$' '.cvs$' '.cvs_transcribed$' '.vcs$' '.vcs_transcribed$' '.ccs$' '.ccs_transcribed$'"
 	elif .task$ = "GFTA"
+		.transcriber = 1
+		.transcriber$ = "GFTATranscriber"
+		.start = 2
+		.start$ = "StartTime"
+		.end = 3
+		.end$ = "EndTime"
 		.trials = 4
 		.trials$ = "NumberOfTrials"
 		.trials_transcribed = 5
